@@ -5,7 +5,7 @@ import Mascot360Viewer from './Mascot360Viewer';
 import VoiceCloneStation from './VoiceCloneStation';
 
 export default function Playground() {
-  const [activeTab, setActiveTab] = useState<'chat' | 'mascot' | 'voice'>('chat');
+  const [activeTab, setActiveTab] = useState<'chat' | 'mascot' | 'voice'>('voice');
 
   return (
     <section id="playground" className="w-full py-20 px-4 bg-slate-900/30 border-y border-slate-800 relative">
@@ -18,11 +18,11 @@ export default function Playground() {
         {/* Playground Container */}
         <div className="bg-[#090d16] rounded-2xl md:rounded-3xl border border-slate-800 shadow-2xl overflow-hidden flex flex-col">
           
-          {/* Tabs - Swipable on mobile */}
-          <div className="flex overflow-x-auto no-scrollbar flex-nowrap border-b border-slate-800 bg-slate-900/50 p-2 gap-2 touch-pan-x">
+          {/* Tabs - Flex Wrap on mobile */}
+          <div className="flex flex-wrap border-b border-slate-800 bg-slate-900/50 p-2 gap-2">
             <button 
               onClick={() => setActiveTab('chat')}
-              className={`whitespace-nowrap flex-shrink-0 min-h-[44px] px-6 rounded-xl font-medium transition-all touch-manipulation flex items-center gap-2 ${
+              className={`flex-1 min-w-[140px] min-h-[44px] px-3 sm:px-6 rounded-xl font-medium transition-all touch-manipulation flex items-center justify-center gap-2 text-sm sm:text-base ${
                 activeTab === 'chat' 
                   ? 'bg-[#0055D4] text-white shadow-[0_0_15px_rgba(0,85,212,0.4)]' 
                   : 'bg-transparent text-slate-400 hover:text-white hover:bg-slate-800'
@@ -32,23 +32,23 @@ export default function Playground() {
             </button>
             <button 
               onClick={() => setActiveTab('mascot')}
-              className={`whitespace-nowrap flex-shrink-0 min-h-[44px] px-6 rounded-xl font-medium transition-all touch-manipulation flex items-center gap-2 ${
+              className={`flex-1 min-w-[140px] min-h-[44px] px-3 sm:px-6 rounded-xl font-medium transition-all touch-manipulation flex items-center justify-center gap-2 text-sm sm:text-base ${
                 activeTab === 'mascot' 
                   ? 'bg-[#FF7700] text-white shadow-[0_0_15px_rgba(255,119,0,0.4)]' 
                   : 'bg-transparent text-slate-400 hover:text-white hover:bg-slate-800'
               }`}
             >
-              🔄 360° Mascot Viewer
+              🔄 360° Mascot
             </button>
             <button 
               onClick={() => setActiveTab('voice')}
-              className={`whitespace-nowrap flex-shrink-0 min-h-[44px] px-6 rounded-xl font-medium transition-all touch-manipulation flex items-center gap-2 ${
+              className={`flex-1 min-w-[140px] min-h-[44px] px-3 sm:px-6 rounded-xl font-medium transition-all touch-manipulation flex items-center justify-center gap-2 text-sm sm:text-base ${
                 activeTab === 'voice' 
                   ? 'bg-purple-600 text-white shadow-[0_0_15px_rgba(147,51,234,0.4)]' 
                   : 'bg-transparent text-slate-400 hover:text-white hover:bg-slate-800'
               }`}
             >
-              🎬 AI Video & Voice Studio
+              🎬 AI Video & Voice
             </button>
           </div>
 
