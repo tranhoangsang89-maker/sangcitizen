@@ -21,7 +21,7 @@ export default function Hero() {
 
       <div className="container mx-auto max-w-6xl flex flex-col items-center text-center">
         {/* Video Player */}
-        <div className="w-full max-w-4xl aspect-[9/16] sm:aspect-video bg-slate-900/50 rounded-2xl md:rounded-3xl border border-slate-800 overflow-hidden shadow-2xl relative mb-12 sm:mb-16">
+        <div className="w-full max-w-4xl aspect-video bg-slate-900/50 rounded-2xl md:rounded-3xl border border-slate-800 overflow-hidden shadow-2xl relative mb-12 sm:mb-16">
           <video 
             ref={videoRef}
             src="/intro-vid-480p.mp4" 
